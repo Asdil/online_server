@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎使用试题分类系统</title>
+</head>
+<body>
+    <img src="http://latex.codecogs.com/gif.latex?\(\left\lbrace\begin{align}& x'=\dfrac{3x}{2},\cr& y'=2y\end{align}\right .\)" />
+    <p style="font-size:150%">请输入题目,可以是文本或者带html格式</p>
+    <form action="/server" method="post" >
+        {% csrf_token %}
+        <textarea name="input" style="width:1000px;height:200px" cols="20">></textarea>
+        <br /><br />
+        <input type="submit" value="确认" style="width:100px;height:100px">
+
+    </form>
+    {% for key, value in result.items %}
+    {{ key }}:{{ value }}
+    <br/>
+    {% endfor %}
+</body>
+</html>
